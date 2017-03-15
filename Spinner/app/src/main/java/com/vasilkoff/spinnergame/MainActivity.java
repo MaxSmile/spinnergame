@@ -164,8 +164,14 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                         public void run() {
                             while (flag) {
                                 count++;
-                                if (count == 100)
-                                    flag = false;
+                                if (count == 100) {
+                                    try {
+                                        Thread.sleep(100);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                    count = 0;
+                                }
 
                                 Message msg = new Message();
                                 msg.arg1 = count;

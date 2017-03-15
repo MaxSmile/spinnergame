@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.vasilkoff.spinnergame"
         minSdkVersion 17
@@ -17,10 +17,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    signingConfigs {
+//        release {
+//            storeFile file('/Users/vasilkoff/spinnergame/keys/keys.jks')
+//            storePassword "123456"
+//            keyAlias "keys"
+//            keyPassword "123456"
+//            v2SigningEnabled false
+//        }
+//    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
