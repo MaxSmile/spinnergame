@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -14,11 +14,47 @@
     tools:context="com.vasilkoff.spinnergame.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout">
+        <ProgressBar
+            android:id="@+id/powerBar"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="?android:attr/progressBarStyleHorizontal"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/powerbar"/>
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/imageHill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hill"
+        android:layout_above="@+id/imageWheel"
+        android:layout_centerHorizontal="true" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/rotateit"
+        android:id="@+id/imageWheel"
+        android:src="@drawable/wheel"
+        android:adjustViewBounds="false"
+        android:scaleType="center"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:id="@+id/powerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/spin_button"
         android:layout_centerInParent="true"
         android:adjustViewBounds="false"
         android:scaleType="center"
@@ -26,11 +62,21 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/center"
+        android:src="@drawable/circle"
         android:layout_centerInParent="true"
         android:adjustViewBounds="false"
         android:scaleType="center"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:id="@+id/imageCircle" />
+    <ImageView
+        android:id="@+id/imagePointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pointer"
+        android:layout_above="@+id/imageWheel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-8dp"/>
+
     <ImageView
         android:id="@+id/buttonImage"
         android:layout_width="160dp"
@@ -40,7 +86,8 @@
         android:layout_alignParentBottom="true"
         android:adjustViewBounds="false"
         android:scaleType="centerCrop"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:visibility="gone"/>
     <TextView
         android:id="@+id/info"
         android:textColor="@android:color/white"
@@ -48,6 +95,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </RelativeLayout>
